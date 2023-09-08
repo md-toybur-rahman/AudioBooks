@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>pti.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .carousel-common {
+            grid-auto-columns: calc((100% / 4) - 50px);
+            scroll-behavior: smooth;
+        }
+
+        .carousel.dragging .card {
+            cursor: grab;
+            user-select: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            .carousel-common {
+                grid-auto-columns: calc((100% / 2) - 10px);
+            }
+        }
+    </style>
+</head>
+
+<body class=" bg-gray-200 max-w-[1440px] mx-auto">
+    <main class="px-5 md:px-40 py-5">
+        <nav class="flex justify-between gap-4 items-center">
+            <h1 class="text-3xl font-bold">pti.</h1>
+            <div class="flex items-center gap-2 md:gap-4">
+                <div class="bg-white flex items-center px-4 py-2 rounded-lg">
+                    <img src="images/Search.png" alt="">
+                    <input class="pl-3 w-[200px] md:w-[500px] outline-none" type="text" placeholder="Search Audiobook">
+                </div>
+                <div class="relative w-24 md:w-40">
+                    <div id="menu" class="flex items-center justify-around gap-4 bg-white px-4 py-2 rounded-lg">
+                        <h1>MENU</h1>
+                        <img class="duration-500" id="menu-img" src="images/Icon4.png" alt="">
+                    </div>
+                    <ul id="dropdown-menu" class="absolute bg-white rounded-lg top-12 py-2 w-24 md:w-40 hidden">
+                        <li class="hover:bg-orange-50 px-4 my-2 text-center bg-gray-200">Home</li>
+                        <li class="hover:bg-orange-50 px-4 my-2 text-center bg-gray-200">Details</li>
+                        <li class="hover:bg-orange-50 px-4 my-2 text-center bg-gray-200">Category</li>
+                        <li class="hover:bg-orange-50 px-4 my-2 text-center bg-gray-200">My Favorites</li>
+                        <li class="hover:bg-orange-50 px-4 my-2 text-center bg-gray-200">Profile</li>
+                        <li class="hover:bg-orange-50 px-4 my-2 text-center bg-gray-200">Login In/Sign Up</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bg-orange-500 p-4 rounded-full hidden md:block">
+                <img src="images/User.png" alt="">
+            </div>
+        </nav>
+        <section
+            class="flex flex-col md:flex-row items-center justify-between md:px-32 md:py-5 mt-28 md:bg-[#F99F1C] rounded-3xl">
+            <div>
+                <h1 class="text-4xl md:text-gray-100 font-semibold text-center md:text-left">Instant Access To <br
+                        class="hidden md:block"> Millions Of Audiobooks.</h1>
+                <p class="md:text-gray-300 mt-5 text-lg text-center md:text-left">Buy Two Selected books And Get One For
+                    Free</p>
+            </div>
+            <div>
+                <img src="images/5764337 1.png" alt="">
+            </div>
+        </section>
+        <section class="mt-28">
+            <div class="flex justify-between items-center">
+                <h1 class="text-[22px] font-semibold">Popular Audiobooks</h1>
+                <div class="flex items-center gap-4">
+                    <img id="left" class="icon" src="images/Icon6.png" alt="">
+                    <h1 class="text-[16px] text-[#F99F1C] font-semibold">See More</h1>
+                    <img id="right" class="icon" src="images/Icon5.png" alt="">
+                </div>
+            </div>
+            <ul class="carousel carousel-common grid grid-flow-col overflow-hidden">
+                <li class="card mt-5 w-[200px]">
+                    <img class="min-w-[200px] h-[265px]" src="images/image 135.png" alt="" draggable="false">
+                    <h2 class="text-center">The Good The Bad And The S..</h2>
+                </li>
+                <li class="card mt-5 w-[200px]">
+                    <img class="min-w-[200px] h-[265px]" src="images/Rectangle 2330.png" alt="" draggable="false">
+                    <h2 class="text-center">Enghantment</h2>
+                </li>
+                <li class="card mt-5 w-[200px]">
+                    <img class="min-w-[200px] h-[265px]" src="images/Rectangle 2328.png" alt="" draggable="false">
+                    <h2 class="text-center">Fierce</h2>
+                </li>
+                <li class="card mt-5 w-[200px]">
+                    <img class="min-w-[200px] h-[265px]" src="images/Rectangle 2327.png" alt="" draggable="false">
+                    <h2 class="text-center">The 4TH Watch</h2>
+                </li>
+                <li class="card mt-5 w-[200px]">
+                    <img class="min-w-[200px] h-[265px]" src="images/Rectangle 2331.png" alt="" draggable="false">
+                    <h2 class="text-center">Monday Hook Duh</h2>
+                </li>
+                <li class="card mt-5 w-[200px]">
+                    <img class="min-w-[200px] h-[265px]" src="images/image 135.png" alt="" draggable="false">
+                    <h2 class="text-center">The Good The Bad And The S..</h2>
+                </li>
+                <li class="card mt-5 w-[200px]">
+                    <img class="min-w-[200px] h-[265px]" src="images/Rectangle 2330.png" alt="" draggable="false">
+                    <h2 class="text-center">Enghantment</h2>
+                </li>
+                <li class="card mt-5 w-[200px]">
+                    <img class="min-w-[200px] h-[265px]" src="images/Rectangle 2328.png" alt="" draggable="false">
+                    <h2 class="text-center">Fierce</h2>
+                </li>
+                <li class="card mt-5 w-[200px]">
+                    <img class="min-w-[200px] h-[265px]" src="images/Rectangle 2327.png" alt="" draggable="false">
+                    <h2 class="text-center">The 4TH Watch</h2>
+                </li>
+                <li class="card mt-5 w-[200px]">
+                    <img class="min-w-[200px] h-[265px]" src="images/Rectangle 2331.png" alt="" draggable="false">
+                    <h2 class="text-center">Monday Hook Duh</h2>
+                </li>
+            </ul>
+        </section>
+        <section class="mt-28">
+            <div class="flex justify-between items-center">
+                <h1 class="text-[22px] font-semibold">Recommended Audiobooks</h1>
+                <div class="flex items-center gap-4">
+                    <img id="left2" class="icon2" src="images/Icon6.png" alt="">
+                    <h1 class="text-[16px] text-[#F99F1C] font-semibold">See More</h1>
+                    <img id="right2" class="icon2" src="images/Icon5.png" alt="">
+                </div>
+            </div>
+            <ul class="carousel2 carousel-common grid grid-flow-col overflow-hidden">
+                <li class="card mt-5 w-[200px]">
+                    <img class="min-w-[200px] h-[265px]" src="images/Rectangle 2329.png" alt="" draggable="false">
+                    <h2 class="text-center">The 4TH Watch<h2>
+                </li>
+                <li class="card mt-5 w-[200px]">
+                    <img class="min-w-[200px] h-[265px]" src="images/image 136.png" alt="" draggable="false">
+                    <h2 class="text-center">Roadtrip To Success</h2>
+                </li>
+                <li class="card mt-5 w-[200px]">
+                    <img class="min-w-[200px] h-[265px]" src="images/image 137.png" alt="" draggable="false">
+                    <h2 class="text-center">Checkpoint</h2>
+                </li>
+                <li class="card mt-5 w-[200px]">
+                    <img class="min-w-[200px] h-[265px]" src="images/image 138.png" alt="" draggable="false">
+                    <h2 class="text-center">Lifestyle</h2>
+                </li>
+                <li class="card mt-5 w-[200px]">
+                    <img class="min-w-[200px] h-[265px]" src="images/image 139.png" alt="" draggable="false">
+                    <h2 class="text-center">The Rise Of A Warrior</h2>
+                </li>
+                <li class="card mt-5 w-[200px]">
+                    <img class="min-w-[200px] h-[265px]" src="images/Rectangle 2329.png" alt="" draggable="false">
+                    <h2 class="text-center">The 4TH Watch<h2>
+                </li>
+                <li class="card mt-5 w-[200px]">
+                    <img class="min-w-[200px] h-[265px]" src="images/image 136.png" alt="" draggable="false">
+                    <h2 class="text-center">Roadtrip To Success</h2>
+                </li>
+                <li class="card mt-5 w-[200px]">
+                    <img class="min-w-[200px] h-[265px]" src="images/image 137.png" alt="" draggable="false">
+                    <h2 class="text-center">Checkpoint</h2>
+                </li>
+                <li class="card mt-5 w-[200px]">
+                    <img class="min-w-[200px] h-[265px]" src="images/image 138.png" alt="" draggable="false">
+                    <h2 class="text-center">Lifestyle</h2>
+                </li>
+                <li class="card mt-5 w-[200px]">
+                    <img class="min-w-[200px] h-[265px]" src="images/image 139.png" alt="" draggable="false">
+                    <h2 class="text-center">The Rise Of A Warrior</h2>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer class="bg-[#F99F1C] flex items-center justify-center md:justify-between md:px-40 mt-40">
+        <div>
+            <div class="bg-white w-fit flex items-center px-4 py-2 rounded-2xl mt-5 md:mt-0">
+                <input class="outline-none px-4 py-2 md:w-[400px]" type="email" placeholder="Enter Your Email">
+                <button class="flex items-center bg-orange-500 text-white px-8 py-2 rounded-2xl gap-2">Subscribe
+                    <img src="images/bi_arrow-left.png" alt=""></button>
+            </div>
+            <div class="mt-20 flex md:flex-row flex-col-reverse items-center md:items-end  justify-between">
+                <div class="text-center md:text-start mt-4 md:mt-0">
+                    <h1 class="text-4xl font-bold">pti<span class="text-orange-600 text-5xl">.</span></h1>
+                    <p class="font-semibold mt-4">Copyright@Tripp.All Right Reserved</p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <img src="images/Icon.png" alt="">
+                    <img src="images/Icon (1).png" alt="">
+                    <img src="images/Icon (2).png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="hidden md:block">
+            <div class="-mt-16">
+                <img src="images/undraw_meditating_re_aiqa 1.png" alt="">
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
